@@ -1,14 +1,11 @@
-import singleton.SingletonClassDemo
-import singleton.SingletonDemo
+import builder.NotificationDemo
 
 fun main() {
-    SingletonDemo.sayMyName()
-    SingletonDemo.sayMyName()
-    SingletonDemo.sayMyName()
-
-    val a = SingletonClassDemo.instance
-    val b = SingletonClassDemo.instance
-    a.sayMyName()
-    b.sayMyName()
-    println(a == b)
+    val notification = NotificationDemo.NotificationBuilder(
+        title = "New Order",
+        message = "You have a new order"
+    )
+        .setPriority(111)
+        .build()
+    notification.show()
 }
