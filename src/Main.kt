@@ -1,3 +1,5 @@
+import abstractFactory.FreeNotificationServiceFactory
+import abstractFactory.PremiumNotificationServiceFactory
 import factory.email.EmailNotificationService
 import factory.sms.SmsNotificationService
 
@@ -9,6 +11,11 @@ fun main() {
     smsNotificationService.notifyUser(userId, message)
 
     val emailNotificationService = EmailNotificationService()
-    emailNotificationService.notifyUser(userId,message)
+    emailNotificationService.notifyUser(userId, message)
 
+    val freeNotificationServiceFactory = FreeNotificationServiceFactory().createSmsService()
+    freeNotificationServiceFactory.notifyUser(userId, message)
+
+    val premiumNotificationServiceFactory = PremiumNotificationServiceFactory().createEmailService()
+    premiumNotificationServiceFactory.notifyUser(userId,message)
 }
