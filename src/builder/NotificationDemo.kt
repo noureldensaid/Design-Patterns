@@ -14,6 +14,7 @@ class NotificationDemo private constructor(
         private val title: String,
         private val message: String
     ) {
+
         private var priority = Int.MAX_VALUE
 
         fun setPriority(priority: Int) = apply {

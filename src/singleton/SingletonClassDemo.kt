@@ -15,7 +15,7 @@ class SingletonClassDemo private constructor() {
         // which guarantees thread-safe initialization. Only one thread
         // will run the initializer, and the created instance is safely
         // published to all threads. No need for `volatile` or manual `synchronized`—Kotlin handles that automatically.
-        val instance: SingletonClassDemo by lazy {
+        val instance by lazy {
             SingletonClassDemo()
         }
     }
